@@ -35,6 +35,19 @@ class TaskStore {
       status: true,
     });
   };
+  updateStatus = async (updateStatus) => {
+  console.log(updateStatus);
+    try {
+    
+      await axios.put(
+        `http://localhost:8000/tasks/${updateStatus.id}`,
+        updateStatus);
+    }
+    catch (error) {
+      console.error(error);
+    }
+  }
+  
 }
 const taskStore = new TaskStore();
 taskStore.fetchTask();

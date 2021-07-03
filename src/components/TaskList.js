@@ -4,10 +4,21 @@ import TaskItem from "./TaskItem";
 import { TaskWrapper } from "../styles";
 
 const TaskList = () => {
-  const taskList = taskStore.tasks
-    .filter((task) => task.name)
-    .map((task) => <TaskItem task={task} />);
-  return <TaskWrapper> {taskList}</TaskWrapper>;
+  const doneList = taskStore.tasks
+      .filter((task) => task.status === true);
+  const notdoneList = taskStore.tasks
+      .filter((task) => task.status === false);
+
+  
+  return <TaskWrapper> {
+    doneList.map(task => <TaskItem task={task}/>
+    )}
+
+<h1>Not Done List</h1>
+
+   { notdoneList.map(task => <TaskItem task={task}/>
+    )}
+  </TaskWrapper>;
 };
 
 export default observer(TaskList);
