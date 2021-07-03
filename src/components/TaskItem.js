@@ -1,4 +1,5 @@
 import { observer } from "mobx-react";
+import DeleteButton from "../buttons/DeleteButton";
 
 const TaskItem = (props) => {
   return (
@@ -10,9 +11,7 @@ const TaskItem = (props) => {
         <button type="button" class="btn btn-outline-primary">
           Done
         </button>
-        <button type="button" class="btn btn-outline-danger">
-          Delete
-        </button>
+        <DeleteButton taskId={props.task.id} />
       </center>
     </div>
   );
