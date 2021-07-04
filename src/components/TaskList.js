@@ -1,7 +1,7 @@
 import taskStore from "../stores/taskStore";
 import { observer } from "mobx-react";
 import TaskItem from "./TaskItem";
-import { TaskWrapper } from "../styles";
+import { TaskWrapper, Title } from "../styles";
 import NewTaskButton from "../buttons/NewTaskButton";
 
 
@@ -17,10 +17,11 @@ const TaskList = () => {
  <div>
  <NewTaskButton/>
     <TaskWrapper> 
-  {
+  
+    <Title>Done Tasks</Title>{
     doneList.map(task => <TaskItem task={task}/>
     )}
-   <h1>Not Done List</h1>
+   <Title>Incomplete List</Title>
    { notdoneList.map(task => <TaskItem task={task}/>
     )}
   </TaskWrapper>

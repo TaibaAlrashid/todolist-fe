@@ -1,5 +1,6 @@
 import { useState } from "react";
 import taskStore from "../stores/taskStore";
+import {TaskWrapper} from "../styles";
 
 const NewTaskButton = () => {
   const [newTask, setNewTask] = useState("");
@@ -10,8 +11,11 @@ const NewTaskButton = () => {
   const handleChange = (event) => {
     setNewTask(event.target.value)};
     return (
-      <div>
-        <button onClick={handleAdd}>ADD A NEW TASK</button>
+      <TaskWrapper>
+     
+      <button  onClick={handleAdd} type="button" class="btn btn-outline-secondary">
+      ADD A NEW TASK
+      </button>
         <input
           type="text"
           class="form-control"
@@ -20,7 +24,7 @@ const NewTaskButton = () => {
           aria-describedby="button-addon1"
           onChange={handleChange}
         />
-      </div>
+      </TaskWrapper>
     );
   
 };

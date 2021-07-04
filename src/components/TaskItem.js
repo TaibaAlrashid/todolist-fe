@@ -18,9 +18,10 @@ const handleClick = () => {
    
    <div>
       <center>
-        <li className="list-group-item list-group-item-primary">
-          {props.task.name}
-        </li>
+        
+        <a class="list-group-item list-group-item-action list-group-item-light">
+        {props.task.name}
+        </a>
         <button onClick = {handleClick} type="button" class="btn btn-outline-primary">
 
           {props.task.status ? "Not Done": "Done" }
