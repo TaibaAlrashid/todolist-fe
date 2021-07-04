@@ -28,13 +28,23 @@ class TaskStore {
     }
   };
 
-  addTask = (newTask) => {
+  addTask = async(newTask) => {
+    try{
+      const response = await axios.post(
+          "http://localhost:8000/tasks", newTask
+      );
+      
+  } catch (error){
+      console.error(error);
+  }
+    const AddNewtask = 
     this.tasks.push({
       name: newTask,
       id: this.tasks.length + 1,
       status: true,
     });
   };
+
   updateStatus = async (updateStatus) => {
   console.log(updateStatus);
     try {

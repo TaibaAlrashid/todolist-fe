@@ -2,6 +2,7 @@ import { observer } from "mobx-react";
 import DeleteButton from "../buttons/DeleteButton";
 import taskStore from "../stores/taskStore";
 
+
 // default => true done , false not done 
 const TaskItem = (props) => {
 const handleClick = () => {
@@ -14,7 +15,8 @@ const handleClick = () => {
   }
 }
   return (
-    <div>
+   
+   <div>
       <center>
         <li className="list-group-item list-group-item-primary">
           {props.task.name}

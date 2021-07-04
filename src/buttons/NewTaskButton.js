@@ -8,21 +8,21 @@ const NewTaskButton = () => {
     taskStore.addTask(newTask);
   };
   const handleChange = (event) => {
-    setNewTask(event.target.value);
+    setNewTask(event.target.value)};
     return (
       <div>
-        <button onClick={handleAdd}>NEW TASK</button>
+        <button onClick={handleAdd}>ADD A NEW TASK</button>
         <input
           type="text"
           class="form-control"
-          placeholder="Add a new movie"
+          placeholder="Add a new task"
           aria-label="Example text with button addon"
           aria-describedby="button-addon1"
           onChange={handleChange}
         />
       </div>
     );
-  };
+  
 };
 
 export default NewTaskButton;
